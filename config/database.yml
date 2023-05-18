@@ -27,7 +27,7 @@ development:
   database: some_blog
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: postgres
-  password: Kibet@254
+  password: <%= ENV['PASSWORD'] %>
   host: localhost
 
 
@@ -87,4 +87,4 @@ production:
   <<: *default
   database: some_blog_production
   username: postgres
-  password: Kibet@254
+  password: <%= ENV['PASSWORD'] %>
