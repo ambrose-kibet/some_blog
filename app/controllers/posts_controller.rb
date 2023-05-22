@@ -7,7 +7,6 @@ class PostsController < ApplicationController
 
   def show
     @article = @user.posts.find(params[:id])
-    
   end
 
   private
