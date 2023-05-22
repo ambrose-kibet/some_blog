@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
   # tests go here
-  subject { Comment.new(text: 'text', created_at: nil, updated_at: nil, author_id: nil, post_id: nil) }
+  subject { Comment.new(text: 'text', created_at: nil, updated_at: nil, user_id: nil, post_id: nil) }
 
   before { subject.save }
 
@@ -22,7 +22,7 @@ RSpec.describe Comment, type: :model do
   end
 
   it 'should have a post id present' do
-    subject.author_id = nil
+    subject.user_id = nil
     expect(subject).to_not be_valid
   end
 end
