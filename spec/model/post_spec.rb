@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   subject do
     Post.new(title: 'some title', text: 'some text', comments_counter: 0, likes_counter: 0, created_at: nil,
-             updated_at: nil, author_id: nil)
+             updated_at: nil, user_id: nil)
   end
 
   before { subject.save }

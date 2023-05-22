@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Like, type: :model do
   # tests go here
-  subject { Like.new(created_at: nil, updated_at: nil, author_id: nil, post_id: nil) }
+  subject { Like.new(created_at: nil, updated_at: nil, user_id: nil, post_id: nil) }
 
   before { subject.save }
 
