@@ -14,7 +14,7 @@
  *= require_self
  */
 
- .article-container {
+.article-container {
   align-items: center;
   justify-content: space-between;
 }
