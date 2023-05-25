@@ -1,0 +1,13 @@
+
+<div class="card m-3">
+  <div class="card-header">
+     <h5 class="card-title">
+     <%= link_to post.title, user_post_path(post.user, post) %>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><%= truncate(post.text, length: 100, separator: ' ')%></p>
+  </div>
+  <div class="card-footer">
+    <p class="card-text text-end"><span> comments: <%=post.comments_counter%></span> <span>  Likes: <%=post.likes_counter%></span></p>
+  </div>
+</div>

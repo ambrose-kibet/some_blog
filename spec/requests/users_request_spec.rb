@@ -12,7 +12,7 @@ RSpec.describe 'Users', type: :request do
     end
     it 'check the response body includes correct placeholder text' do
       get '/users/'
-      expect(response.body).to include('<h1>All users place holder</h1>')
+      expect(response.body).to include('<p class="text-end">Number of posts: 0</p>')
     end
   end
   describe 'GET /show' do
@@ -28,7 +28,7 @@ RSpec.describe 'Users', type: :request do
     end
     it 'check the response body includes correct placeholder text' do
       get "/users/#{user.id}"
-      expect(response.body).to include('<h1>user show placeholder</h1>')
+      expect(response.body).to include('<p class="text-end">Number of posts: 0</p>')
     end
   end
 end

@@ -15,7 +15,7 @@ RSpec.describe 'Posts', type: :request do
     end
     it 'check the response body includes correct placeholder text' do
       get "/users/#{user.id}/posts"
-      expect(response.body).to include('<h1>this is the place holder for posts</h1>')
+      expect(response.body).to include('<div class="btn btn-secondary">Pagination</div>')
     end
   end
   describe 'GET /show' do
@@ -34,7 +34,7 @@ RSpec.describe 'Posts', type: :request do
 
     it 'check the response body includes correct placeholder text' do
       get "/users/#{user.id}/posts/#{post.id}"
-      expect(response.body).to include('<h1>placeholder for show template</h1>')
+      expect(response.body).to include('<p class="card-text"> Post text 1</p>')
     end
   end
 end
