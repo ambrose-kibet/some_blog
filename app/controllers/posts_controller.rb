@@ -2,11 +2,11 @@ class PostsController < ApplicationController
   before_action :set_user
 
   def index
-    @articles = @user.posts
+    @posts = @user.posts
   end
 
   def show
-    @article = @user.posts.find(params[:id])
+    @post = @user.posts.find(params[:id])
   end
 
   private

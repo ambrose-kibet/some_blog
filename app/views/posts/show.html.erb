@@ -1,1 +1,23 @@
-<h1>placeholder for show template</h1>
+<div class="container">
+
+<div class="card m-3" >
+  <div class="card-header d-flex justify-content-between">
+    <div class="d-flex">
+
+      <h5 class="card-title "><%=@post.title%> </h5>
+      <p class="mx-3">by <%=@post.user.name%></p>
+    </div>
+
+    <p><span>Comments: <%=@post.comments_counter%></span>  <span>Likes:  <%=@post.likes_counter%></span></p>
+  </div>
+  <div class="card-body">
+    
+    <p class="card-text"><%=@post.text%></p>
+  </div>
+  <div class="card-footer">
+    <%@post.comments.each do |comment|%>
+    <%= render partial: 'comments/comment', locals: { comment: comment }%>
+    <%end%>
+  </div>
+</div>
+</div>

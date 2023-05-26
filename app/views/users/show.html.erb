@@ -1,1 +1,12 @@
-<h1>user show placeholder</h1>
+
+<div class="container">
+<%= render partial: 'user', locals: { user: @user } %>
+<h4 class="text-center">Bio</h4>
+<p class="text-center"><%=@user.bio%></p>
+<% @user.recent_posts.each do |post|%>
+ <%= render partial: 'posts/post', locals: { post: post } %>
+<%end %>
+<h3 class="text-center mx-3">
+  <%= link_to 'See all posts', user_posts_path(@user) %>
+</h3>
+</div>

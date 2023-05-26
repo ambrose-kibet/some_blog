@@ -1,1 +1,17 @@
-<h1>this is the place holder for posts</h1>
+
+   <%= render partial: 'users/user', locals: { user: @user } %>
+   <div class="container">
+  <% @posts.each do |post| %>
+   <%= render partial: 'post', locals: { post: post }%>
+   <div>
+    <% post.recent_comments.each do |comment|%>
+     <%= render partial: 'comments/comment', locals: { comment: comment }%>
+    <%end%>
+   </div>
+   <% end %>
+
+   <div class="container d-flex justify-content-center my-5">
+    <div class="btn btn-secondary">Pagination</div>
+   </div>
+    </div>
+
