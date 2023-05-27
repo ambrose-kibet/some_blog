@@ -1,0 +1,9 @@
+<div class="form">
+<%= form_with model: @comment, url: user_post_comments_path, method: :post, local: true, scope: :comment do |f| %>
+<div class="mb-3">
+ <%= f.label :text, class: 'form-label'%>
+  <%= f.text_area :text,  class: "form-control" , placeholder:'add comment here'%>
+</div>
+  <%= f.submit "comment" ,class: 'btn btn-submit btn-primary'%>
+<% end %>
+</div>
