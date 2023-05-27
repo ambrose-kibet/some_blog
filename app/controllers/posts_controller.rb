@@ -1,17 +1,24 @@
 class PostsController < ApplicationController
-  before_action :set_user
-
   def index
+    @user = User.find(params[:user_id])
     @posts = @user.posts
   end
 
   def show
+    @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:id])
   end
 
-  private
+  def new; end
 
-  def set_user
-    @user = User.find(params[:user_id])
+  def create
+    @post = current_user.posts.new(params.require(:post).permit(:title, :text))
+    if @post.save
+      flash[:notice] = 'post created successfully.'
+      redirect_to user_posts_path(current_user)
+    else
+      flash[:alert] = 'post creation failed.'
+      render :new
+    end
   end
 end
