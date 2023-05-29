@@ -2,11 +2,11 @@ class CommentsController < ApplicationController
   before_action :set_user_and_post
 
   def index
-    @comments = @post.comments
+    @comments = @post.comments.includes(:user)
   end
 
   def show
-    @comment = @user.posts.find(params[:id])
+    @comment = @post.comments.find(params[:id])
   end
 
   def new
@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to user_posts_path
     else
-      render :create
+      render :new
     end
   end
 
