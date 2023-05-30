@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @user = User.find(params[:user_id])
+    @user = User.includes(posts: { comments: :user }).find(params[:user_id])
     @posts = @user.posts
   end
 
@@ -12,13 +12,19 @@ class PostsController < ApplicationController
   def new; end
 
   def create
-    @post = current_user.posts.new(params.require(:post).permit(:title, :text))
+    @post = current_user.posts.new(post_params)
     if @post.save
-      flash[:notice] = 'post created successfully.'
+      flash[:notice] = 'Post created successfully.'
       redirect_to user_posts_path(current_user)
     else
-      flash[:alert] = 'post creation failed.'
+      flash[:alert] = 'Post creation failed.'
       render :new
     end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :text)
   end
 end
