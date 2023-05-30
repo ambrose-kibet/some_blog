@@ -101,11 +101,6 @@ To run the project, execute the following command:
 - Twitter: [Twitter](https://twitter.com/ambrose_kibet)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/ambrose-kibet/)
 
-👤 **Leslie Aine**
-
-- GitHub: [@LeslieAine](https://github.com/LeslieAine)
-- LinkedIn: [LeslieAine](https://linkedin.com/in/LeslieAine)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
