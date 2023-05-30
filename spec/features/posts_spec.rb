@@ -78,9 +78,13 @@ RSpec.feature 'Posts', type: :feature do
       @comment4 = Comment.create(text: 'fourth comment', user: @user2, post: @post1)
       @comment5 = Comment.create(text: 'fifth comment', user: @user3, post: @post2)
     end
-    it 'shuoul gave post 2 title present present' do
+    it 'test to see a POST TITLE' do
       visit user_post_path(@post2.user, @post2)
       expect(page).to have_content(@post2.title)
+    end
+    it 'test to see a POST BODY' do
+      visit user_post_path(@post2.user, @post2)
+      expect(page).to have_content(@post2.text)
     end
 
     it 'shuoul gave user 1 present as  the user who wrote it' do
@@ -107,13 +111,13 @@ RSpec.feature 'Posts', type: :feature do
       expect(page).to have_content(@user3.name)
     end
 
-    it 'Shows the right comments for each user' do
+    it 'displays the username and comment text of each commenter' do
       visit user_post_path(@post2.user, @post2)
-      expect(page).to have_content(@comment1.text)
-    end
-    it 'Shows the right comments for each user' do
-      visit user_post_path(@post2.user, @post2)
-      expect(page).to have_content(@comment2.text)
+
+      @post2.comments.each do |comment|
+        expect(page).to have_content(comment.user.name)
+        expect(page).to have_content(comment.text)
+      end
     end
   end
 end
