@@ -60,7 +60,6 @@ RSpec.feature 'Posts', type: :feature do
     end
   end
 
-
   describe 'posts\show' do
     before(:each) do
       @user1 = User.create(name: 'some name', photo: 'https://bit.ly/3ILKEv7', bio: 'Isome bio for user 1.')
