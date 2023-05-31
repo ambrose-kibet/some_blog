@@ -2,7 +2,7 @@
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <h3 class="nav-link" >Home </h3>
+          <%= link_to 'Home', users_path, class: 'nav-link' %>
       </li>
       <li class="nav-item active"></li>
       <% if member_signed_in? %>
