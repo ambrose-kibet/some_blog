@@ -4,8 +4,7 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  
-  #add show method
+  # add show method
   def show
     @user = User.find(params[:id])
   end
