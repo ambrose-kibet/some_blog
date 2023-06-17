@@ -8,7 +8,11 @@
       <p class="mx-3">by <%=@post.user.name%></p>
     </div>
 
-    <p><span>Comments: <%=@post.comments_counter%></span>  <span>Likes:  <%=@post.likes_counter%></span></p>
+    <p><span>Comments: <%=@post.comments_counter%></span>  <span>Likes:  <%=@post.likes_counter%>  </span>
+    <%if can? :destroy, @post%>
+    <%= link_to 'Remove', user_post_path(@post.user, @post), method: :delete, data: { turbo_method: :delete } %>
+    <%end%>
+    </p>
   </div>
   <div class="card-body">
     

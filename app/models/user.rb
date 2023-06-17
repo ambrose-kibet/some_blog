@@ -12,4 +12,5 @@ class User < ApplicationRecord
   def recent_posts
     posts.order(created_at: :desc).limit(3)
   end
+  enum role: { user: 0, moderator: 1, admin: 2 }
 end
